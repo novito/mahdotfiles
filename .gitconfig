@@ -1,0 +1,14 @@
+[color]
+	ui = true
+[user]
+	name = Joan Roig
+	email = roigarderiu@gmail.com
+[core]
+	excludesfile = /home/novito/.git_ignore_global
+[merge "gemfilelock"]
+  name = relocks the gemfile.lock
+  driver = bundle install 
+[alias]
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
