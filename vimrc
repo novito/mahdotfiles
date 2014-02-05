@@ -4,6 +4,10 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
+" Nice plugins
+" easy grep, ctrlp, nerdcommenter, nerdtree, supertab, vdebug, vim-rails,
+" Zoomwin
+
 
 colorscheme desert
 " colorscheme proton
