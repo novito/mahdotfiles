@@ -45,6 +45,7 @@ set number
 
 let mapleader = ","
 nmap <leader>ne :NERDTree<cr>
+let g:NERDTreeWinPos = "right" " Make nerdtree open on right
 
 nnoremap <F11> :tab split<CR> " Window splitting <C-w>c to go back
 
@@ -55,3 +56,11 @@ set completeopt-=preview " don't pop new window when using omni completion
 
 " Avoid carriage return problems
 set ffs=unix,dos
+
+" Avoid vdebug to break at index.php
+let g:vdebug_options = { 'break_on_open' : 0, 'continuous_mode': 1 }
+"
+" if !exists("g:vdebug_options")
+    " let g:vdebug_options = {}
+" endif
+" let g:vdebug_options["break_on_open"]=0

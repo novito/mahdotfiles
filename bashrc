@@ -63,9 +63,13 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 # go to alias
-alias gtmm='cd ~/Projectes/MarketMotive'
+alias gtmm='cd ~/Projectes/MarketMotive/training'
+alias gtpp='cd ~/Projectes/PhoneFindr'
 # logs
 alias apachelogs='tail -f /var/log/apache2/error.log'
+alias sshmm='ssh marketmo@marketmotive.com'
+
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
