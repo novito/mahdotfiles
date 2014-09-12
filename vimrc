@@ -16,7 +16,7 @@ set noshowmode
 set autoindent
 set smarttab
 set expandtab
-set number
+set relativenumber
 
 set ignorecase
 set smartcase
@@ -49,6 +49,8 @@ colorscheme desert
 let mapleader = ","
 nmap <leader>ne :NERDTree<cr>
 let g:NERDTreeWinPos = "right" " Make nerdtree open on right
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 " MVIM
 if has('gui_macvim')
@@ -59,3 +61,11 @@ endif
 set gfn=Monaco:h12
 
 noremap <silent> <Space> :silent noh<Bar>echo<CR>
+
+" Run rspec from vim
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_runner = "os_x_iterm"
+
