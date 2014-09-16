@@ -4,7 +4,7 @@
 	name = Joan Roig
 	email = roigarderiu@gmail.com
 [core]
-	excludesfile = /home/novito/.git_ignore_global
+	excludesfile = /Users/novito/.gitignore_global
 [merge "gemfilelock"]
   name = relocks the gemfile.lock
   driver = bundle install 

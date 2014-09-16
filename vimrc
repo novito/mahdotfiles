@@ -17,9 +17,13 @@ set autoindent
 set smarttab
 set expandtab
 set relativenumber
+set number
 
 set ignorecase
 set smartcase
+
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc files
 
 runtime macros/matchit.vim 
 
@@ -36,13 +40,6 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
 
-"if has('gui_running')
-  "set background=light
-"else
-  "set background=dark
-"end
-
-"let g:solarized_termtrans = 1
 colorscheme desert
 
 " NerdTree
@@ -69,3 +66,6 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
 
+" Maximize/Minimize windows
+nnoremap <F9> :tabedit %<CR>
+nnoremap <F10> :tabclose<CR>

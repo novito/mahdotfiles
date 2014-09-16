@@ -33,6 +33,9 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # coloring and GIT branching
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 function parse_git_branch () {
    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -63,11 +66,16 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 # go to alias
-alias gtmm='cd ~/Projectes/MarketMotive/training'
-alias gtpp='cd ~/Projectes/PhoneFindr'
+# alias gtmm='cd ~/Projectes/MarketMotive/training'
+# alias gtpp='cd ~/Projectes/PhoneFindr'
 # logs
-alias apachelogs='tail -f /var/log/apache2/error.log'
-alias sshmm='ssh marketmo@marketmotive.com'
+# alias apachelogs='tail -f /var/log/apache2/error.log'
+# alias sshmm='ssh marketmo@marketmotive.com'
+alias gtmm='cd /Users/novito/www/joomla16'
+alias gtad='cd /Users/novito/Projectes/adrapid'
+alias gtwww='cd /Users/novito/www'
+alias restartapache='sudo apachectl restart'
+alias mysql=/usr/local/mysql/bin/mysql
 
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
 
@@ -92,9 +100,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "/home/novito/.rvm/scripts/rvm" ]] && source "/home/novito/.rvm/scripts/rvm"
+PATH=$PATH:/Users/novito/pear/bin # Add pear 
+PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export FLIP_TOP_TOKEN="ke88a9x6ejtrcek7qsd5nvvn"
-
+PATH=$PATH:$EC2_HOME/bin 
+PATH=/usr/local/php5/bin:$PATH
