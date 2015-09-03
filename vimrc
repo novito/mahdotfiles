@@ -26,6 +26,7 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-dispatch'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -112,7 +113,8 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 "let g:rspec_runner = 'os_x_iterm'
-let g:rspec_command = 'call Send_to_Tmux("zeus rspec {spec}\n")'
+"let g:rspec_command = 'call Send_to_Tmux("zeus rspec {spec}\n")'
+let g:rspec_command = "Dispatch zeus rspec {spec}"
 
 " The Silver Searcher
 if executable('ag')
@@ -128,9 +130,6 @@ endif
 
 " Do not open file in buffer after finding with Ag
 cabbrev Ag Ag!
-
-" Search word under cursor with K
-"nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Find stuff just pressing \
 nnoremap \ :Ag<SPACE>
@@ -148,6 +147,10 @@ nnoremap <silent> ]b :bnext<CR>
 " Navigate through windows
 map <Tab> <C-W>w
 map <C-t> <C-W>T
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Splitting should be more natural...
 set splitbelow
@@ -182,12 +185,6 @@ nmap <leader>tc :tabclose<CR>
 
 " Copies current file path to the clipboard
 nmap <silent> <leader>cp :let @+ = expand("%")<CR>
-
-" Navigate split windows
-map <leader>h :wincmd h<CR>
-map <leader>j :wincmd j<CR>
-map <leader>k :wincmd k<CR>
-map <leader>l :wincmd l<CR>
 
 " Allow jsx highlight in js files
 let g:jsx_ext_required = 0
