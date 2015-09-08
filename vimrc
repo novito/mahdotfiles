@@ -78,10 +78,10 @@ autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
 autocmd Filetype cucumber setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
-"colorscheme railscasts
-"set background=dark
-set background=dark
 colorscheme base16-railscasts
+"set background=dark
+"set background=dark
+"colorscheme base16-railscasts
 
 highlight clear SignColumn
 highlight VertSplit    ctermbg=236
@@ -185,6 +185,7 @@ nmap <leader>tc :tabclose<CR>
 
 " Copies current file path to the clipboard
 nmap <silent> <leader>cp :let @+ = expand("%")<CR>
+set clipboard=unnamed
 
 " Allow jsx highlight in js files
 let g:jsx_ext_required = 0

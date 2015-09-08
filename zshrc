@@ -1,4 +1,4 @@
- Path to your oh-my-zsh installation.
+ # Path to your oh-my-zsh installation.
  export ZSH=$HOME/.oh-my-zsh
 
  # Set name of the theme to load.
@@ -83,16 +83,17 @@
  # Skip forward/back a word with opt-arrow
 
  # ALIAS
- alias rts='cd /Users/joanroig/Projects/Teespring/rails-teespring'
- alias bdb='cd /Users/joanroig/Projects/Teespring/bdb-teespring'
+ alias rts='cd /Users/teespring10063/Code/rails-teespring'
  alias gh='cd ~'
  alias gpr='git pull --rebase origin master'
  alias vc='mvim .'
  alias rake="noglob rake"
- alias railz="sh /Users/joanroig/tmux_rails.sh"
+ alias railz="sh /Users/teespring10063/tmux_rails.sh"
+ alias vim="/usr/local/bin/vim"
 
- export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
- export TEESPRING_PATH="$HOME/Projects/Teespring"
- export DOCKER_HOST=tcp://192.168.59.103:2376
- export DOCKER_CERT_PATH="$HOME/.boot2docker/certs/boot2docker-vm"
- export DOCKER_TLS_VERIFY=1
+ #export TEESPRING_PATH="$HOME/Projects/Teespring"
+ #export DOCKER_HOST=tcp://192.168.59.103:2376
+ #export DOCKER_CERT_PATH="$HOME/.boot2docker/certs/boot2docker-vm"
+ #export DOCKER_TLS_VERIFY=1
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
