@@ -7,7 +7,7 @@
 	excludesfile = /Users/novito/.gitignore_global
 [merge "gemfilelock"]
   name = relocks the gemfile.lock
-  driver = bundle install 
+  driver = bundle install
 [alias]
   ignore = update-index --assume-unchanged
   unignore = update-index --no-assume-unchanged
@@ -20,4 +20,6 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [push]
+	default = current
+[pull]
 	default = current
