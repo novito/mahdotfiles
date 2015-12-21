@@ -88,7 +88,7 @@
  alias gpr='git pull --rebase origin master'
  alias vc='mvim .'
  alias rake="noglob rake"
- alias railz="sh /Users/teespring10063/tmux_rails.sh"
+ alias railz="sh /Users/teespring10063/dotfiles/tmux_rails.sh"
  alias vim="/usr/local/bin/vim"
 
  #export TEESPRING_PATH="$HOME/Projects/Teespring"
