@@ -97,3 +97,6 @@
  #export DOCKER_TLS_VERIFY=1
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export GOPATH="$HOME/Code/go"
+export PATH="$GOPATH/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

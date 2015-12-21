@@ -100,7 +100,7 @@ highlight SpellBad     ctermbg=0   ctermfg=1
 
 " NerdTree
 let mapleader = ","
-nmap <silent> <leader>n :NERDTree<cr>
+nmap <silent> <leader>n :NERDTreeFind<cr>
 nmap <silent> <leader>p :NERDTreeToggle<CR>
 
 let g:NERDTreeWinSize=50
