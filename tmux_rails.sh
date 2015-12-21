@@ -16,8 +16,6 @@ tmux rename-window server
 # Window for rails console
 tmux new-window
 tmux send-keys 'bundle exec rails c' 'C-m'
-tmux split-window -v
-tmux send-keys 'zeus start' 'C-m'
 tmux rename-window console
 
 # Select the first window
