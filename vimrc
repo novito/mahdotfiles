@@ -27,6 +27,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-dispatch'
+Plugin 'jgdavey/tslime'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -79,9 +81,6 @@ autocmd Filetype cucumber setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
 colorscheme base16-railscasts
-"set background=dark
-"set background=dark
-"colorscheme base16-railscasts
 
 highlight clear SignColumn
 highlight VertSplit    ctermbg=236
@@ -113,8 +112,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 "let g:rspec_runner = 'os_x_iterm'
-"let g:rspec_command = 'call Send_to_Tmux("zeus rspec {spec}\n")'
-let g:rspec_command = "Dispatch  bin/rspec {spec}"
+let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
 
 " The Silver Searcher
 if executable('ag')

@@ -85,8 +85,8 @@
  # ALIAS
  alias rts='cd /Users/teespring10063/Code/rails-teespring'
  alias gh='cd ~'
- alias gpr='git pull --rebase origin master'
- alias vc='mvim .'
+ alias gprd='git pull --rebase origin develop'
+ #alias gca = 'git commit --amend'
  alias rake="noglob rake"
  alias railz="sh /Users/teespring10063/dotfiles/tmux_rails.sh"
  alias vim="/usr/local/bin/vim"
@@ -99,4 +99,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export GOPATH="$HOME/Code/go"
 export PATH="$GOPATH/bin:$PATH"
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+source ~/dotfiles/tmuxinator.zsh
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export NVM_DIR="/Users/teespring10063/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
