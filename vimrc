@@ -27,7 +27,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-dispatch'
-Plugin 'jgdavey/tslime'
+Plugin 'NLKNguyen/papercolor-theme'
 
 
 call vundle#end()            " required
@@ -98,7 +98,7 @@ highlight PmenuSel     ctermbg=3   ctermfg=1
 highlight SpellBad     ctermbg=0   ctermfg=1
 
 " NerdTree
-let mapleader = ","
+let mapleader = "\<Space>"
 nmap <silent> <leader>n :NERDTreeFind<cr>
 nmap <silent> <leader>p :NERDTreeToggle<CR>
 
@@ -111,7 +111,6 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-"let g:rspec_runner = 'os_x_iterm'
 let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
 
 " The Silver Searcher
@@ -157,6 +156,9 @@ set splitright
 " Highlight search
 set hlsearch
 
+" put git status, column/row number, total lines, and percentage in status
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
+
 " Move window to tab
 nnoremap <C-t> <C-w>T
 
@@ -188,3 +190,10 @@ set clipboard=unnamed
 " Allow jsx highlight in js files
 let g:jsx_ext_required = 0
 let g:syntastic_javascript_checkers = ['jsxhint']
+
+" Open file
+nnoremap <Leader>o :CtrlP<CR>
+" Save file
+nnoremap <Leader>w :w<CR>
+" Select text just pasted
+noremap gV `[v`]

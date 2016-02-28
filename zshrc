@@ -50,9 +50,8 @@
  source $ZSH/oh-my-zsh.sh
 
  # User local bin in front of everything ;)
- export PATH="/usr/local/bin:$PATH"
+ export PATH="/usr/local/bin:/Users/teespring10063/bin:$PATH"
 
- #export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/novito/pear/bin:/bin"
  # export MANPATH="/usr/local/man:$MANPATH"
 
  # You may need to manually set your language environment
@@ -106,3 +105,12 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export NVM_DIR="/Users/teespring10063/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# myIP address
+function myip() {
+        ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
+        ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
+        ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
+        ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
+        ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
+}
