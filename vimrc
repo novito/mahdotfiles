@@ -174,7 +174,8 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 :inoremap kj <ESC>
 
 " Map semicolon to colon
-:nmap ; :
+:nnoremap ; :
+:nnoremap : ;
 
 " Toogle nerdtree
 nnoremap <C-e> :NERDTreeToggle<CR>
@@ -195,5 +196,7 @@ let g:syntastic_javascript_checkers = ['jsxhint']
 nnoremap <Leader>o :CtrlP<CR>
 " Save file
 nnoremap <Leader>w :w<CR>
-" Select text just pasted
-noremap gV `[v`]
+
+" Let me know when I go over 80 columns
+highlight ColorColumn ctermbg=yellow
+call matchadd('ColorColumn', '\%81v', 100)

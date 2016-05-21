@@ -84,21 +84,27 @@
  # ALIAS
  alias rts='cd /Users/teespring10063/Code/rails-teespring'
  alias gh='cd ~'
- alias gprd='git pull --rebase origin develop'
+ alias glrd='git pull --rebase origin develop'
+ alias gd='git branch -D'
+ alias gdr='git branch -rd'
  #alias gca = 'git commit --amend'
  alias rake="noglob rake"
  alias railz="sh /Users/teespring10063/dotfiles/tmux_rails.sh"
  alias vim="/usr/local/bin/vim"
+ alias ctags="/usr/local/bin/ctags"
+ alias run_ctags="ctags -R --exclude=.git --exclude=node_modules"
 
  #export TEESPRING_PATH="$HOME/Projects/Teespring"
  #export DOCKER_HOST=tcp://192.168.59.103:2376
  #export DOCKER_CERT_PATH="$HOME/.boot2docker/certs/boot2docker-vm"
  #export DOCKER_TLS_VERIFY=1
+export HONEYBADGER_AUTH_TOKEN="9L81Aj4ypeXZSAdBZyqv"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export GOPATH="$HOME/Code/go"
 export PATH="$GOPATH/bin:$PATH"
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+export PATH=/Users/teespring10063/Code/devops_utils:$PATH
 source ~/dotfiles/tmuxinator.zsh
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
