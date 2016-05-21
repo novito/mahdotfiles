@@ -176,8 +176,7 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 :inoremap kj <ESC>
 
 " Map semicolon to colon
-:nnoremap ; :
-:nnoremap : ;
+:noremap ; :
 
 " open current window into tab, mantain current split structure
 nmap <leader>to :tabedit %<CR>
