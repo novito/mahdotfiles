@@ -28,6 +28,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-dispatch'
 Plugin 'NLKNguyen/papercolor-theme'
+"Plugin 'FooSoft/vim-argwrap'
 
 
 call vundle#end()            " required
@@ -97,9 +98,10 @@ highlight Pmenu        ctermbg=240 ctermfg=12
 highlight PmenuSel     ctermbg=3   ctermfg=1
 highlight SpellBad     ctermbg=0   ctermfg=1
 
-" NerdTree
 let mapleader = "\<Space>"
-nmap <silent> <leader>n :NERDTreeFind<cr>
+
+" NerdTree
+nmap <silent> <leader>n :NERDTreeFind<CR>
 nmap <silent> <leader>p :NERDTreeToggle<CR>
 
 let g:NERDTreeWinSize=50
@@ -198,5 +200,9 @@ nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
 
 " Let me know when I go over 80 columns
-highlight ColorColumn ctermbg=yellow
-call matchadd('ColorColumn', '\%81v', 100)
+"highlight ColorColumn ctermbg=blue
+"call matchadd('ColorColumn', '\%81v', 100)
+
+" wrap/unwrap arguments
+"nnoremap <silent> <leader>a :ArgWrap<CR>
+"let g:argwrap_tail_comma = 1

@@ -84,7 +84,7 @@
  # ALIAS
  alias rts='cd /Users/teespring10063/Code/rails-teespring'
  alias gh='cd ~'
- alias glrd='git pull --rebase origin develop'
+ alias glrebdev='git pull --rebase origin develop'
  alias gd='git branch -D'
  alias gdr='git branch -rd'
  #alias gca = 'git commit --amend'
