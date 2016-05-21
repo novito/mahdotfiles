@@ -179,9 +179,6 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 :nnoremap ; :
 :nnoremap : ;
 
-" Toogle nerdtree
-nnoremap <C-e> :NERDTreeToggle<CR>
-
 " open current window into tab, mantain current split structure
 nmap <leader>to :tabedit %<CR>
 nmap <leader>tc :tabclose<CR>
@@ -200,9 +197,9 @@ nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
 
 " Let me know when I go over 80 columns
-"highlight ColorColumn ctermbg=blue
-"call matchadd('ColorColumn', '\%81v', 100)
+highlight ColorColumn ctermbg=blue
+call matchadd('ColorColumn', '\%81v', 100)
 
 " wrap/unwrap arguments
-"nnoremap <silent> <leader>a :ArgWrap<CR>
-"let g:argwrap_tail_comma = 1
+nnoremap <silent> <leader>a :ArgWrap<CR>
+let g:argwrap_tail_comma = 1
