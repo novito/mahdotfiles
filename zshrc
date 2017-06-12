@@ -84,15 +84,18 @@
  # ALIAS
  alias rts='cd /Users/teespring10063/Code/rails-teespring'
  alias gh='cd ~'
- alias glrebdev='git pull --rebase origin develop'
+ alias grd='git pull --rebase origin develop'
+ alias gr='git pull --rebase origin $(current_branch)'
  alias gd='git branch -D'
  alias gdr='git branch -rd'
- #alias gca = 'git commit --amend'
+ alias gacm='git add . && git commit -m'
+ alias yolo='git push -f origin'
  alias rake="noglob rake"
  alias railz="sh /Users/teespring10063/dotfiles/tmux_rails.sh"
  alias vim="/usr/local/bin/vim"
  alias ctags="/usr/local/bin/ctags"
  alias run_ctags="ctags -R --exclude=.git --exclude=node_modules"
+ alias agr='ag -G ".*.rb"'
 
  #export TEESPRING_PATH="$HOME/Projects/Teespring"
  #export DOCKER_HOST=tcp://192.168.59.103:2376

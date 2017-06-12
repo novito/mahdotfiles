@@ -23,3 +23,5 @@
 	default = current
 [pull]
 	default = current
+[rebase]
+	autosquash = true

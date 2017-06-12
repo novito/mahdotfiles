@@ -28,7 +28,9 @@ Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-dispatch'
 Plugin 'NLKNguyen/papercolor-theme'
-"Plugin 'FooSoft/vim-argwrap'
+Plugin 'FooSoft/vim-argwrap'
+Plugin 'tpope/vim-endwise'
+Plugin 'leafgarland/typescript-vim'
 
 
 call vundle#end()            " required
@@ -80,6 +82,7 @@ autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
 autocmd Filetype cucumber setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
 
 colorscheme base16-railscasts
 
@@ -89,7 +92,7 @@ highlight ColorColumn  ctermbg=237
 highlight LineNr       ctermbg=236 ctermfg=240
 highlight CursorLineNr ctermbg=236 ctermfg=240
 highlight CursorLine   ctermbg=236
-highlight StatusLineNC ctermbg=238 ctermfg=0
+highlight StatusLineNC ctermbg=238 ctermfg=72
 highlight StatusLine   ctermbg=240 ctermfg=12
 highlight IncSearch    ctermbg=3   ctermfg=1
 highlight Search       ctermbg=1   ctermfg=3
@@ -132,6 +135,7 @@ cabbrev Ag Ag!
 
 " Find stuff just pressing \
 nnoremap \ :Ag<SPACE>
+:command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
@@ -197,8 +201,11 @@ nnoremap <Leader>w :w<CR>
 
 " Let me know when I go over 80 columns
 highlight ColorColumn ctermbg=blue
-call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\%101v', 100)
 
 " wrap/unwrap arguments
 nnoremap <silent> <leader>a :ArgWrap<CR>
 let g:argwrap_tail_comma = 1
+
+" Point to correct ruby exec
+let g:syntastic_ruby_mri_exec='~/.rbenv/versions/2.2.4/bin/ruby'
