@@ -8,6 +8,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
@@ -109,6 +110,9 @@ nmap <silent> <leader>p :NERDTreeToggle<CR>
 
 let g:NERDTreeWinSize=50
 
+" NerdCommenter
+let g:NERDCompactSexyComs = 1
+
 nmap <silent> <Space> :silent noh<Bar>echo<CR>
 
 " Run rspec from vim
@@ -199,13 +203,15 @@ nnoremap <Leader>o :CtrlP<CR>
 " Save file
 nnoremap <Leader>w :w<CR>
 
-" Let me know when I go over 80 columns
-highlight ColorColumn ctermbg=blue
-call matchadd('ColorColumn', '\%101v', 100)
-
 " wrap/unwrap arguments
 nnoremap <silent> <leader>a :ArgWrap<CR>
 let g:argwrap_tail_comma = 1
 
 " Point to correct ruby exec
 let g:syntastic_ruby_mri_exec='~/.rbenv/versions/2.2.4/bin/ruby'
+
+" Allow Cltrp to get more files
+let g:ctrlp_max_depth=40
+
+" SCSS files go slow with syntastic active mode. Make it passive
+let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
