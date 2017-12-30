@@ -124,3 +124,8 @@ nnoremap <Leader>w :w<CR>
 " wrap/unwrap arguments
 nnoremap <silent> <leader>a :ArgWrap<CR>
 let g:argwrap_tail_comma = 1
+
+" color scheme config
+set t_Co=256   " This is may or may not needed.
+set background=light
+colorscheme PaperColor
