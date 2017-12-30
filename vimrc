@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -6,33 +7,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'ervandew/supertab'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-surround'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'kana/vim-textobj-user'
-Plugin 'rking/ag.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'jgdavey/tslime.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-dispatch'
 Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'FooSoft/vim-argwrap'
-Plugin 'tpope/vim-endwise'
-Plugin 'leafgarland/typescript-vim'
-
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -65,42 +46,14 @@ set showmode
 
 set autoread
 
-" Powerline
-set guifont=Source\ Code\ Pro\ for\ Powerline:h15
-
 runtime macros/matchit.vim
 
 syntax on
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
-autocmd Filetype php setlocal ts=4 sts=4 sw=4
-autocmd Filetype coffee setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
-autocmd Filetype liquid setlocal ts=2 sts=2 sw=2
-autocmd Filetype cucumber setlocal ts=2 sts=2 sw=2
-autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
-autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
-
-colorscheme base16-railscasts
-
-highlight clear SignColumn
-highlight VertSplit    ctermbg=236
-highlight ColorColumn  ctermbg=237
-highlight LineNr       ctermbg=236 ctermfg=240
-highlight CursorLineNr ctermbg=236 ctermfg=240
-highlight CursorLine   ctermbg=236
-highlight StatusLineNC ctermbg=238 ctermfg=72
-highlight StatusLine   ctermbg=240 ctermfg=12
-highlight IncSearch    ctermbg=3   ctermfg=1
-highlight Search       ctermbg=1   ctermfg=3
-highlight Visual       ctermbg=3   ctermfg=0
-highlight Pmenu        ctermbg=240 ctermfg=12
-highlight PmenuSel     ctermbg=3   ctermfg=1
-highlight SpellBad     ctermbg=0   ctermfg=1
 
 let mapleader = "\<Space>"
 
@@ -114,32 +67,6 @@ let g:NERDTreeWinSize=50
 let g:NERDCompactSexyComs = 1
 
 nmap <silent> <Space> :silent noh<Bar>echo<CR>
-
-" Run rspec from vim
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
-
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" Do not open file in buffer after finding with Ag
-cabbrev Ag Ag!
-
-" Find stuff just pressing \
-nnoremap \ :Ag<SPACE>
-:command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
@@ -166,9 +93,6 @@ set splitright
 " Highlight search
 set hlsearch
 
-" put git status, column/row number, total lines, and percentage in status
-set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
-
 " Move window to tab
 nnoremap <C-t> <C-w>T
 
@@ -194,24 +118,9 @@ nmap <leader>tc :tabclose<CR>
 nmap <silent> <leader>cp :let @+ = expand("%")<CR>
 set clipboard=unnamed
 
-" Allow jsx highlight in js files
-let g:jsx_ext_required = 0
-let g:syntastic_javascript_checkers = ['jsxhint']
-
-" Open file
-nnoremap <Leader>o :CtrlP<CR>
 " Save file
 nnoremap <Leader>w :w<CR>
 
 " wrap/unwrap arguments
 nnoremap <silent> <leader>a :ArgWrap<CR>
 let g:argwrap_tail_comma = 1
-
-" Point to correct ruby exec
-let g:syntastic_ruby_mri_exec='~/.rbenv/versions/2.2.4/bin/ruby'
-
-" Allow Cltrp to get more files
-let g:ctrlp_max_depth=40
-
-" SCSS files go slow with syntastic active mode. Make it passive
-let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
